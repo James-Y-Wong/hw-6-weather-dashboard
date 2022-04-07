@@ -35,12 +35,13 @@ body {
 }
 
 #current-condition {
-    height: 15rem;
     margin: 1rem;
 }
 
 .home-section {
-    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
     position: relative;
     width: calc(100% - 300px);
     left: 350px;
