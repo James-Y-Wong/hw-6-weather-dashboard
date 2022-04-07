@@ -1,3 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+}
+
 .jumbotron {
     background-color: navy;
     color: white;
@@ -7,24 +18,30 @@
 
 }
 
-#search-input {
-    width: 17rem;
-
-}
 
 #search-button {
     width: 17rem;
 }
 
-aside {
-    margin-left: 1rem;
-    flex-direction: row;
-    height: 100rem;
+#search-input {
+    width: 17rem;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 300px;
+    margin-left: 1rem;  
 }
 
 #current-condition {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
     height: 15rem;
+    margin: 1rem;
+}
+
+.home-section {
+    min-height: 100vh;
+    position: relative;
+    width: calc(100% - 300px);
+    left: 350px;
 }
