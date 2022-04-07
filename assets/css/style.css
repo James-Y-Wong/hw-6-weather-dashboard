@@ -39,10 +39,26 @@ body {
 }
 
 .home-section {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     height: 100%;
     position: relative;
     width: calc(100% - 300px);
     left: 350px;
+}
+
+.bottom-section {
+    position: relative;
+    width: calc(100% - 300px);
+    left: 350px;
+}
+
+.card-deck {
+    width: 1300px;
+}
+
+.future-body {
+    background-color: navy;
+    color: white;
+    padding: 1rem;
 }
