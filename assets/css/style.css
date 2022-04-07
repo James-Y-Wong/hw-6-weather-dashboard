@@ -6,3 +6,16 @@
     font-family: 'Kanit', sans-serif;
 
 }
+
+#search-input {
+    width: 17rem;
+
+}
+
+#search-button {
+    width: 17rem;
+}
+
+aside {
+    margin-left: 1rem;
+}
