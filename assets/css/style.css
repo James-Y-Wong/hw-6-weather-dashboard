@@ -18,4 +18,13 @@
 
 aside {
     margin-left: 1rem;
+    flex-direction: row;
+    height: 100rem;
+}
+
+#current-condition {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    height: 15rem;
 }
