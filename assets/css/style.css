@@ -1,3 +1,9 @@
+/* color pallete from schemecolor.com */
+:root {
+    --light: #E6E6E6;
+    --dark: #4270B2;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,8 +16,8 @@ body {
 }
 
 .jumbotron {
-    background-color: navy;
-    color: white;
+    background-color: var(--dark);
+    color: var(--light);
     text-align: center;
     padding: 1rem;
     font-family: 'Kanit', sans-serif;
@@ -21,6 +27,8 @@ body {
 
 #search-button {
     width: 17rem;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 #search-input {
@@ -54,11 +62,11 @@ body {
 }
 
 .card-deck {
-    width: 1300px;
+    width: 900px;
 }
 
 .future-body {
-    background-color: navy;
-    color: white;
+    background-color: var(--dark);
+    color: var(--light);
     padding: 1rem;
 }
