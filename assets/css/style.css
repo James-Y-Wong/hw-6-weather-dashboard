@@ -2,6 +2,7 @@
 :root {
     --light: #E6E6E6;
     --dark: #4270B2;
+    --gray: grey;
 }
 
 * {
@@ -69,4 +70,9 @@ body {
     background-color: var(--dark);
     color: var(--light);
     padding: 1rem;
+}
+
+.btn-secondary {
+    background-color: var(--gray);
+    width: 17rem;
 }
