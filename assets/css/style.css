@@ -63,7 +63,7 @@ body {
 }
 
 .card-deck {
-    width: 900px;
+    width: 1000px;
 }
 
 .future-body {
@@ -75,4 +75,9 @@ body {
 .btn-secondary {
     background-color: var(--gray);
     width: 17rem;
+}
+
+dt {
+    float: left;
+    margin-right: 7px;
 }
