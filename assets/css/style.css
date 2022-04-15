@@ -27,7 +27,7 @@ body {
 
 
 #search-button {
-    width: 17rem;
+    width: 18.75rem;
     background-color: var(--dark);
     color: var(--light);
 }
@@ -74,10 +74,14 @@ body {
 
 .btn-secondary {
     background-color: var(--gray);
-    width: 17rem;
+    width: 18.75rem;
 }
 
 dt {
     float: left;
     margin-right: 7px;
+}
+
+.card-future {
+    width: 160px;
 }

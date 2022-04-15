@@ -5,9 +5,45 @@ var weatherDayTempEl = document.querySelector("#weather-day-temp");
 var weatherDayWindEl = document.querySelector("#weather-day-wind");
 var weatherDayHumidityEl = document.querySelector("#weather-day-humidity");
 var weatherDayUvIndexEl = document.querySelector("#weather-day-index");
+var forecastContainerEl = document.querySelector("#forecast-container");
 
 var baseUrl = "http://api.openweathermap.org/";
 var apiKey = "0bd0db4911219e35081c10de764bbd42";
+
+
+function populate5day(data) {
+    data.forEach(function(day, index) {
+        if (index > 4) {
+            return;
+        }
+        var temp = day.temp.day;
+        var windSpeed = day.wind_speed;
+        var humidity = day.humidity;
+        var icon = day.weather[0].icon;
+        var div = document.createElement("div");
+        // div.classList = "future-body"
+        div.innerHTML = ` 
+            <div class="card-future card">
+                <div class="future-body">             
+                    <h5 class="card-title" id="date1">4/7/2022</h5>
+                    <img src="http://via.placeholder.com/20" />
+                    <dl>
+                        <dt>Temp:</dt>
+                        <dd>${temp}</dd>
+                        <dt>Wind:</dt>
+                        <dd>${windSpeed} MPH</dd>
+                        <dt>Humidity</dt>
+                        <dd>${humidity} %</dd>
+                    </dl>
+                </div>
+            </div>
+        `
+        forecastContainerEl.append(div);
+
+    })
+        
+    
+}
 
 function getCityDayWeather(city) {
     var url = `${baseUrl}geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
@@ -36,9 +72,11 @@ function getCityDayWeather(city) {
 
             weatherDayCityEl.textContent = city;
             weatherDayTempEl.textContent = temp;
-            weatherDayWindEl.textContent = windSpeed;
-            weatherDayHumidityEl.textContent = humidity;
+            weatherDayWindEl.textContent = windSpeed + " MPH";
+            weatherDayHumidityEl.textContent = humidity + " %";
             weatherDayUvIndexEl.textContent = uvIndex;
+
+            populate5day(data.daily);
 
         });
     });
