@@ -76,6 +76,7 @@ body {
 .btn-secondary {
     background-color: var(--gray);
     width: 18.75rem;
+    margin-bottom: 5px;
 }
 
 dt {

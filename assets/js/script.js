@@ -32,7 +32,7 @@ function populate5day(data) {
                     <img src="https://openweathermap.org/img/wn/${icon}.png" />
                     <dl>
                         <dt>Temp:</dt>
-                        <dd>${temp}</dd>
+                        <dd>${temp} \u00B0F</dd>
                         <dt>Wind:</dt>
                         <dd>${windSpeed} MPH</dd>
                         <dt>Humidity</dt>
@@ -83,7 +83,7 @@ function getCityDayWeather(city) {
             var icon = current.weather[0].icon
 
             weatherDayCityEl.textContent = city;
-            weatherDayTempEl.textContent = temp;
+            weatherDayTempEl.textContent = temp + " \u00B0F";
             weatherDayWindEl.textContent = windSpeed + " MPH";
             weatherDayHumidityEl.textContent = humidity + " %";
             weatherDayUvIndexEl.textContent = uvIndex;
