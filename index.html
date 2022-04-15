@@ -54,8 +54,11 @@
           style="max-width: 50rem"
         >
           <div class="card-body text-dark">
-            <h2 class="card-title" id="weather-day-city"></h2>
-            <img id="weather-day-icon" src=""/>
+            <div class="current-header">
+              <h2 class="card-title" id="weather-day-city"></h2>
+              <h5 id="current-date"></h5>
+              <img id="weather-day-icon" src=""/>
+            </div>
             <dl>
               <dt>Temp:</dt>
               <dd id="weather-day-temp"></dd>
@@ -148,6 +151,7 @@
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

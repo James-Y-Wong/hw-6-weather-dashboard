@@ -92,10 +92,17 @@ dt {
     background-color: var(--dark);
 }
 
-h2 {
+h2, h5 {
     color: var(--light);
 }
 
 dl {
     color: var(--light);
 }
+
+.current-header {
+    position: relative;
+}
+
+
+

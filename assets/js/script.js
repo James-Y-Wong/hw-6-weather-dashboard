@@ -8,6 +8,7 @@ var weatherDayUvIndexEl = document.querySelector("#weather-day-index");
 var forecastContainerEl = document.querySelector("#forecast-container");
 var weatherDayIconEl = document.querySelector("#weather-day-icon");
 var buttonContainerEl = document.querySelector("#button-container");
+var currentDate = document.querySelector("#current-date");
 
 var baseUrl = "http://api.openweathermap.org/";
 var apiKey = "0bd0db4911219e35081c10de764bbd42";
@@ -19,6 +20,8 @@ function populate5day(data) {
         if (index === 0 || index > 5) {
             return;
         }
+        var dt = day.dt;
+        var date = moment.unix(dt).format("L");
         var temp = day.temp.day;
         var windSpeed = day.wind_speed;
         var humidity = day.humidity;
@@ -28,7 +31,7 @@ function populate5day(data) {
         div.innerHTML = ` 
             <div class="card-future card">
                 <div class="future-body">             
-                    <h5 class="card-title" id="date1">4/7/2022</h5>
+                    <h5 class="card-title" id="date1">${date}</h5>
                     <img src="https://openweathermap.org/img/wn/${icon}.png" />
                     <dl>
                         <dt>Temp:</dt>
@@ -76,12 +79,14 @@ function getCityDayWeather(city) {
         })
         .then(function (data) {
             var current = data.current;
+            var date = current.dt;
             var temp = current.temp;
             var windSpeed = current.wind_speed;
             var humidity = current.humidity;
             var uvIndex = current.uvi;
             var icon = current.weather[0].icon
 
+            currentDate.textContent = moment.unix(date).format("L");
             weatherDayCityEl.textContent = city;
             weatherDayTempEl.textContent = temp + " \u00B0F";
             weatherDayWindEl.textContent = windSpeed + " MPH";
