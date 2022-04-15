@@ -104,5 +104,19 @@ dl {
     position: relative;
 }
 
+.favorable {
+    background-color: green;
+}
 
+.moderate {
+    background-color: yellow;
+}
+
+.severe {
+    background-color: red;
+}
+
+#weather-day-index {
+    padding: 2px;
+}
 

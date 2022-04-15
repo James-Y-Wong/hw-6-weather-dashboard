@@ -92,6 +92,14 @@ function getCityDayWeather(city) {
             weatherDayWindEl.textContent = windSpeed + " MPH";
             weatherDayHumidityEl.textContent = humidity + " %";
             weatherDayUvIndexEl.textContent = uvIndex;
+            if (uvIndex < 3) {
+                weatherDayUvIndexEl.classList.add("favorable");
+            } else if (uvIndex < 7) {
+                weatherDayUvIndexEl.classList.add("moderate");
+            } else {
+                weatherDayUvIndexEl.classList.add("severe");
+            }
+
             weatherDayIconEl.src = `https://openweathermap.org/img/wn/${icon}.png`;
 
             populate5day(data.daily);
