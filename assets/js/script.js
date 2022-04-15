@@ -7,6 +7,7 @@ var weatherDayHumidityEl = document.querySelector("#weather-day-humidity");
 var weatherDayUvIndexEl = document.querySelector("#weather-day-index");
 var forecastContainerEl = document.querySelector("#forecast-container");
 var weatherDayIconEl = document.querySelector("#weather-day-icon");
+var buttonContainerEl = document.querySelector("#button-container");
 
 var baseUrl = "http://api.openweathermap.org/";
 var apiKey = "0bd0db4911219e35081c10de764bbd42";
@@ -14,7 +15,7 @@ var apiKey = "0bd0db4911219e35081c10de764bbd42";
 
 function populate5day(data) {
     data.forEach(function(day, index) {
-        if (index > 4) {
+        if (index === 0 || index > 5) {
             return;
         }
         var temp = day.temp.day;
@@ -85,10 +86,20 @@ function getCityDayWeather(city) {
     });
 }
 
+
+function populateButton(city) {
+    var button = document.createElement("button");
+    button.classList = "btn btn-secondary";
+    button.textContent = city;
+    button.setAttribute("data-city", city);
+    buttonContainerEl.appendChild(button);
+}
+
 function handleFormSubmit(event) {
     event.preventDefault();
     var city = searchFormCityInputEl.value;
     getCityDayWeather(city);
+    populateButton(city);
 }
 
 function addEventListeners() {
