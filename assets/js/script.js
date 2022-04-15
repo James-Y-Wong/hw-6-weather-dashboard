@@ -68,7 +68,7 @@ function getCityDayWeather(city) {
         var lat = cityObject.lat;
         var lon = cityObject.lon;
 
-        var currentWeatherUrl = `${baseUrl}data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+        var currentWeatherUrl = `${baseUrl}data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
 
         fetch(currentWeatherUrl)
         .then(function (response) {
