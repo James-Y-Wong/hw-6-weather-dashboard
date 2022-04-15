@@ -103,8 +103,15 @@ function handleFormSubmit(event) {
     populateButton(city);
 }
 
+function handleButtonClick(event) {
+    var target = event.target;
+    var city = target.getAttribute("data-city");
+    getCityDayWeather(city);
+}
+
 function addEventListeners() {
     searchFormEl.addEventListener("submit", handleFormSubmit);
+    buttonContainerEl.addEventListener("click", handleButtonClick);
 }
 
 function init() {
