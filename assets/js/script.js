@@ -96,11 +96,29 @@ function populateButton(city) {
     buttonContainerEl.appendChild(button);
 }
 
+function storeCityLocation(city) {
+    var cities = window.localStorage.getItem("cities");
+    if (cities) {
+        cities = JSON.parse(cities)
+    } else {
+        cities = []
+    }
+
+    if (cities.includes(city)) {
+        return;
+    } else {
+        cities.push(city);
+    }
+    
+    window.localStorage.setItem("cities", JSON.stringify(cities));
+}
+
 function handleFormSubmit(event) {
     event.preventDefault();
     var city = searchFormCityInputEl.value;
     getCityDayWeather(city);
     populateButton(city);
+    storeCityLocation(city);
 }
 
 function handleButtonClick(event) {
