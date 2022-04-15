@@ -88,12 +88,25 @@ function getCityDayWeather(city) {
 }
 
 
-function populateButton(city) {
-    var button = document.createElement("button");
-    button.classList = "btn btn-secondary";
-    button.textContent = city;
-    button.setAttribute("data-city", city);
-    buttonContainerEl.appendChild(button);
+function populateButton() {
+    buttonContainerEl.innerHTML = "";
+    var cities = window.localStorage.getItem("cities");
+    if (cities) {
+        cities = JSON.parse(cities)
+    } else {
+        cities = []
+    }
+
+    cities.forEach(function(city) {
+        var button = document.createElement("button");
+
+        button.classList = "btn btn-secondary";
+        button.textContent = city;
+        button.setAttribute("data-city", city);
+        buttonContainerEl.appendChild(button);
+    })
+
+
 }
 
 function storeCityLocation(city) {
@@ -117,8 +130,8 @@ function handleFormSubmit(event) {
     event.preventDefault();
     var city = searchFormCityInputEl.value;
     getCityDayWeather(city);
-    populateButton(city);
     storeCityLocation(city);
+    populateButton(city);
 }
 
 function handleButtonClick(event) {
@@ -134,6 +147,7 @@ function addEventListeners() {
 
 function init() {
     addEventListeners()
+    populateButton();
 }
 
 init();
