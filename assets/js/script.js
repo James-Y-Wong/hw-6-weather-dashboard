@@ -14,6 +14,7 @@ var apiKey = "0bd0db4911219e35081c10de764bbd42";
 
 
 function populate5day(data) {
+    forecastContainerEl.innerHTML = "";
     data.forEach(function(day, index) {
         if (index === 0 || index > 5) {
             return;
