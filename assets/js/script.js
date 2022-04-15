@@ -56,6 +56,14 @@ function getCityDayWeather(city) {
         return response.json();
     })
     .then(function (data) {
+        if(!data.length) {
+            window.alert("No city matches!");
+            return;
+        }
+
+        storeCityLocation(city);
+        populateButton();
+
         var cityObject = data[0];
         var lat = cityObject.lat;
         var lon = cityObject.lon;
@@ -130,8 +138,6 @@ function handleFormSubmit(event) {
     event.preventDefault();
     var city = searchFormCityInputEl.value;
     getCityDayWeather(city);
-    storeCityLocation(city);
-    populateButton(city);
 }
 
 function handleButtonClick(event) {
