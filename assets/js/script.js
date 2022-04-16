@@ -11,7 +11,7 @@ var buttonContainerEl = document.querySelector("#button-container");
 var currentDate = document.querySelector("#current-date");
 
 //variables for fetching API easier
-var baseUrl = "http://api.openweathermap.org/";
+var baseUrl = "https://api.openweathermap.org/";
 var apiKey = "0bd0db4911219e35081c10de764bbd42";
 
 // function populates 5 days forecast card 
