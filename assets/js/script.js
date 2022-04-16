@@ -60,12 +60,13 @@ function getCityDayWeather(city) {
     .then(function (response) {
         return response.json();
     })
+    // notifies user if no matches of city search
     .then(function (data) {
         if(!data.length) {
             window.alert("No city matches!");
             return;
         }
-
+        // prevents adding to search history if no city hit
         storeCityLocation(city);
         populateButton();
 
@@ -88,12 +89,15 @@ function getCityDayWeather(city) {
             var uvIndex = current.uvi;
             var icon = current.weather[0].icon
 
+            // converting seconds to milliseconds
             currentDate.textContent = moment.unix(date).format("L");
             weatherDayCityEl.textContent = city;
             weatherDayTempEl.textContent = temp + " \u00B0F";
             weatherDayWindEl.textContent = windSpeed + " MPH";
             weatherDayHumidityEl.textContent = humidity + " %";
             weatherDayUvIndexEl.textContent = uvIndex;
+
+            // conditional statement for color coding UV index
             if (uvIndex < 3) {
                 weatherDayUvIndexEl.classList.add("favorable");
             } else if (uvIndex < 7) {
@@ -110,7 +114,7 @@ function getCityDayWeather(city) {
     });
 }
 
-
+// populate search history buttons and links when you click in search history
 function populateButton() {
     buttonContainerEl.innerHTML = "";
     var cities = window.localStorage.getItem("cities");
@@ -132,6 +136,7 @@ function populateButton() {
 
 }
 
+// stores search history into local storage
 function storeCityLocation(city) {
     var cities = window.localStorage.getItem("cities");
     if (cities) {
