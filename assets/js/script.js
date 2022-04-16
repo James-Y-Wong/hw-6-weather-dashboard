@@ -10,10 +10,11 @@ var weatherDayIconEl = document.querySelector("#weather-day-icon");
 var buttonContainerEl = document.querySelector("#button-container");
 var currentDate = document.querySelector("#current-date");
 
+//variables for fetching API easier
 var baseUrl = "http://api.openweathermap.org/";
 var apiKey = "0bd0db4911219e35081c10de764bbd42";
 
-
+// function populates 5 days forecast card 
 function populate5day(data) {
     forecastContainerEl.innerHTML = "";
     data.forEach(function(day, index) {
@@ -27,7 +28,7 @@ function populate5day(data) {
         var humidity = day.humidity;
         var icon = day.weather[0].icon;
         var div = document.createElement("div");
-        // div.classList = "future-body"
+        // renders HTML for each day of forecast
         div.innerHTML = ` 
             <div class="card-future card">
                 <div class="future-body">             
@@ -44,13 +45,14 @@ function populate5day(data) {
                 </div>
             </div>
         `
+        // appends to html
         forecastContainerEl.append(div);
 
     })
         
     
 }
-
+// fetch api from open weather app
 function getCityDayWeather(city) {
     var url = `${baseUrl}geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
 
