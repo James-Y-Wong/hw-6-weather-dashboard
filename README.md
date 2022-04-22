@@ -33,3 +33,9 @@ The below picture is the final result.
 ## Link To Deployed Page
 
 - [Weather Dashboard](https://james-y-wong.github.io/hw-6-weather-dashboard/)
+
+## Contact Information
+
+- Email: jamesyeuwong@gmail.com
+- [LinkedIn](https://www.linkedin.com/in/james-wong-90652497)
+- [GitHub](https://github.com/James-Y-Wong)
