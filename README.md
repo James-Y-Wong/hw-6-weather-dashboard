@@ -12,6 +12,11 @@ The purpose of this project is to build a weather dashboard using all the knowle
 
 The below picture is the final result.
 
+>Here is the Weather Dashboard on initial load.
+>
+>
+>![This is a screenshot on initial load of the Weather Dashboard](./assets/images/weather-dashboard-home-screenshot.png)
+
 >The Weather Dashboard displays the current weather and 5-day forecast for the city the user searched. It will also be added to the search history so the user can access the information simply by clicking on it.
 >
 >
